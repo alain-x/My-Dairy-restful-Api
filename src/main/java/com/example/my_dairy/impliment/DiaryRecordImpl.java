@@ -43,14 +43,11 @@ public class DiaryRecordImpl implements DiaryRecordService {
     }
 
     @Override
-    public List<DiaryRecordDto> getRecords(Long userId) {
-        // Check if any record exists for the given userId
-        if (!recordRepo.existsByUserId(userId)) {
-            // Throw an exception with HTTP 404 status
+    public List<DiaryRecordDto> getRecords(Long userId) { 
+        if (!recordRepo.existsByUserId(userId)) { 
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User with ID " + userId + " not found.");
         }
-
-        // Fetch and map records
+ 
         return recordRepo.findByUserIdOrderByCreatedOnDesc(userId)
                 .stream()
                 .map(record -> modelMapper.map(record, DiaryRecordDto.class))

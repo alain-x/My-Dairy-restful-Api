@@ -15,4 +15,9 @@ This project provides a simple API for managing diary records.
 - **Update a Diary Entry**: `PATCH http://localhost:8080/api/{id}?userId={id}`
 - **Delete a Diary Entry**: `DELETE http://localhost:8080/api/{id}?userId={id}`
 
+### Group 10
+- **14288/2018**
+- **20554/2022**
+- **20594/2022**
+
 Feel free to test these endpoints using Postman or any API client.
